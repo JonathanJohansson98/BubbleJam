@@ -155,7 +155,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   affectedTriggerArea: {fileID: 177680313926321013}
-  forceMagnitude: 10
+  forceMagnitude: 4
   affectedTag: Player
 --- !u!1 &3314984260571951163
 GameObject:
