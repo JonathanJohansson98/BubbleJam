@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4012592389257346716}
   - component: {fileID: 6732232105684225691}
   - component: {fileID: 3391604358997657361}
+  - component: {fileID: 8606341147710127743}
   m_Layer: 0
   m_Name: Bubble
   m_TagString: Player
@@ -151,6 +152,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!81 &8606341147710127743
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6566421797923883063}
+  m_Enabled: 1
 --- !u!1 &6696568050469657913
 GameObject:
   m_ObjectHideFlags: 0
