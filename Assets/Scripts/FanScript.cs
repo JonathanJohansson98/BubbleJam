@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FanScript : MonoBehaviour
@@ -8,15 +9,11 @@ public class FanScript : MonoBehaviour
 
     [SerializeField,Range(1, 100)] private float forceMagnitude = 10f;
 
-    [SerializeField] private GameObject fanDebugObject;
-
     Vector3 clickPosition;
     Vector3 targetScreenPosition;
     float ClickDistanceFromBubble;
-
     Vector3 forceDirection;
     Vector3 force;
-    Vector3 fanDebugPosition;
 
     void Update()
     {
@@ -34,7 +31,6 @@ public class FanScript : MonoBehaviour
                 force = -forceDirection.normalized * forceMagnitude / (ClickDistanceFromBubble);
             }
 
-            fanDebugPosition = targetObject.transform.position + forceDirection.normalized * ClickDistanceFromBubble / 10;
         }
 
         if (Input.GetMouseButtonUp(0))
@@ -44,17 +40,13 @@ public class FanScript : MonoBehaviour
             ClickDistanceFromBubble = 0;
 
             force = Vector3.zero;
-
-            fanDebugPosition = transform.position;
         }
-
-
     }
 
     private void FixedUpdate()
     {
-        if (playerAlive)
-        {
+        if (!playerAlive)
+            return;
 
             if (force == Vector3.zero)
                 return;
