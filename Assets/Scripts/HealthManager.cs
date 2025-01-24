@@ -26,7 +26,12 @@ void OnTriggerEnter(Collider other)
         if (other.CompareTag("Checkpoint"))
         {
             currentCheckpoint = other.gameObject;
-            Debug.Log("Player reached the checkpoint!");
+            Debug.Log("Player has reached" + currentCheckpoint.name);
+        } else if (other.CompareTag("Hazard"))
+        {
+            currentHealth = currentHealth - 1;
+            HealthUpdate();
+            Debug.Log("YOU DIED TO" + other.gameObject.name);
         }
     }
 
@@ -34,11 +39,14 @@ void OnTriggerEnter(Collider other)
     {
         if (currentHealth <= 0)
         {
+            //play animations or sounds
             Die();
+            Debug.Log("HealthUpdate() runs");
+            Debug.Log("Current Health = " + currentHealth);
         }
     }
 
-    public IEnumerator Die() 
+    public void Die() 
     {
     
         if (rend != null)
@@ -50,10 +58,11 @@ void OnTriggerEnter(Collider other)
         {
             col.enabled = false;
         }
-
+        Debug.Log("Die() runs");
       RespawnPlayerAtCheckpoint();
-      yield return new WaitForSeconds(1f);
-      yield return null;
+      //yield return new WaitForSeconds(1f);
+      //yield return null;
+      
     }
 
     private void RespawnPlayerAtCheckpoint()
@@ -61,6 +70,7 @@ void OnTriggerEnter(Collider other)
             playerCharacter.transform.position = currentCheckpoint.transform.position;
 
             currentHealth = maxHealth;
+            Debug.Log("RespawnPlayerAtCheckpoint() runs");
 
             if (rend != null) rend.enabled = true;
             if (col != null) col.enabled = true;
