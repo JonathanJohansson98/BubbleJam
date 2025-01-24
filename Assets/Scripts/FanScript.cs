@@ -2,8 +2,12 @@ using UnityEngine;
 
 public class FanScript : MonoBehaviour
 {
-    public GameObject targetObject;
-    public float forceMagnitude = 10f;
+    [SerializeField] private GameObject targetObject;
+    [SerializeField] private Rigidbody targetRigidBody;
+
+    [SerializeField,Range(.1f, 1)] private float forceMagnitude = 10f;
+
+    [SerializeField] private GameObject fanDebugObject;
 
     void Update()
     {
@@ -14,13 +18,14 @@ public class FanScript : MonoBehaviour
 
             Vector3 direction = clickPosition - targetScreenPosition;
 
-            Rigidbody targetRigidbody = targetObject.GetComponent<Rigidbody>();
-            if (targetRigidbody != null)
+            if (targetRigidBody != null)
             {
                 direction.z = 0;
                 Vector3 force = -direction.normalized * forceMagnitude;
-                targetRigidbody.AddForce(force, ForceMode.Impulse);
+                targetRigidBody.AddForce(force, ForceMode.Impulse);
             }
+
+            fanDebugObject.transform.position = targetObject.transform.position + direction.normalized * 2;
         }
     }
 }
