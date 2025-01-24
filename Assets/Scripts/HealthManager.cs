@@ -8,7 +8,8 @@ public class HealthManager : MonoBehaviour
     public int maxHealth = 1;
 
     public GameObject playerCharacter;
-    public GameObject currentCheckpoint;
+    //public GameObject currentCheckpoint;
+    private int latestCheckpoint;
 
     private Renderer rend;
     private Collider col;
@@ -23,11 +24,23 @@ public class HealthManager : MonoBehaviour
 
 void OnTriggerEnter(Collider other)
     {
+        SafeZoneManager checkpoint = other.GetComponent<SafeZoneManager>();
         if (other.CompareTag("Checkpoint"))
         {
-            currentCheckpoint = other.gameObject;
-            Debug.Log("Player has reached" + currentCheckpoint.name);
-        } else if (other.CompareTag("Hazard"))
+            if (currentHealth > 0)
+            {
+                latestCheckpoint = checkpoint.thisSafeZone;
+                Debug.Log("Player has reached checkpoint: " + checkpoint.thisSafeZone);
+            }
+            else
+            {
+                if (checkpoint.thisSafeZone != latestCheckpoint)
+                {
+                    restoreControl();
+                }
+            }
+        } 
+        else if (other.CompareTag("Hazard"))
         {
             currentHealth = currentHealth - 1;
             HealthUpdate();
@@ -40,33 +53,37 @@ void OnTriggerEnter(Collider other)
         if (currentHealth <= 0)
         {
             //play animations or sounds
-            StartCoroutine(Die());
+            Die();
             Debug.Log("HealthUpdate() runs");
             Debug.Log("Current Health = " + currentHealth);
         }
     }
 
-    public IEnumerator Die() 
+    private void Die()
     {
-    
-        if (rend != null)
-        {
-            rend.enabled = false;
-        }
 
-        if (col != null)
-        {
-            col.enabled = false;
-        }
+        FanScript fanScript = GetComponent<FanScript>();
+        fanScript.playerAlive = false;
+        playerCharacter.transform.position += new Vector3(0,0,3);
+        //if (rend != null)
+        //{
+        //    rend.enabled = false;
+        //}
+
+        //if (col != null)
+        //{
+        //    col.enabled = false;
+        //}
         Debug.Log("Die() runs");
+      //RespawnPlayerAtCheckpoint();
+      //yield return new WaitForSeconds(1f);
+      //yield return null;
       
-      yield return new WaitForSeconds(1f);
-      RespawnPlayerAtCheckpoint();
     }
 
     private void RespawnPlayerAtCheckpoint()
     {
-            playerCharacter.transform.position = currentCheckpoint.transform.position;
+            //playerCharacter.transform.position = currentCheckpoint.transform.position;
 
             currentHealth = maxHealth;
             Debug.Log("RespawnPlayerAtCheckpoint() runs");
@@ -74,4 +91,35 @@ void OnTriggerEnter(Collider other)
             if (rend != null) rend.enabled = true;
             if (col != null) col.enabled = true;
     }
+
+    private void restoreControl()
+    {
+        currentHealth = maxHealth;
+        Debug.Log("Restore Control");
+        FanScript fanScript = GetComponent<FanScript>();
+        fanScript.playerAlive = true;
+        playerCharacter.transform.position += new Vector3(0, 0, -3);
+
+
+        if (rend != null) rend.enabled = true;
+        if (col != null) col.enabled = true;
+    }
+
+    //public GameObject playerCharacter;
+    //public GameObject safeZone;
+    //private int latestSafeZone;
+    //[SerializeField] private int thisSafeZone;
+
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.GetComponent<HealthManager>().currentHealth > 0)
+    //    {
+    //        latestSafeZone = thisSafeZone;
+    //    }
+    //    else
+    //    {
+    //        //restoreControl();
+    //    }
+    //}
 }

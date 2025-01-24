@@ -4,6 +4,7 @@ public class FanScript : MonoBehaviour
 {
     [SerializeField] private GameObject targetObject;
     [SerializeField] private Rigidbody targetRigidBody;
+    public bool playerAlive = true;
 
     [SerializeField,Range(1, 100)] private float forceMagnitude = 10f;
 
@@ -52,11 +53,15 @@ public class FanScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (force == Vector3.zero)
-            return;
+        if (playerAlive)
+        {
 
-        targetRigidBody.AddForce(force, ForceMode.Impulse);
+            if (force == Vector3.zero)
+                return;
 
-        fanDebugObject.transform.position = fanDebugPosition;
+            targetRigidBody.AddForce(force, ForceMode.Impulse);
+
+            fanDebugObject.transform.position = fanDebugPosition;
+        }
     }
 }
