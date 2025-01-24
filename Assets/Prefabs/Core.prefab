@@ -447,6 +447,10 @@ PrefabInstance:
       propertyPath: fanDebugObject
       value: 
       objectReference: {fileID: 2776503660721208720}
+    - target: {fileID: 6732232105684225691, guid: d6f1964769cb4144e9dab04562f0e669, type: 3}
+      propertyPath: forceMagnitude
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 9135698139835772007, guid: d6f1964769cb4144e9dab04562f0e669, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.5482
