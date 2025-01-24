@@ -58,7 +58,6 @@ public class FanScript : MonoBehaviour
 
             if (force == Vector3.zero)
                 return;
-
             targetRigidBody.AddForce(force, ForceMode.Impulse);
 
             fanDebugObject.transform.position = fanDebugPosition;
