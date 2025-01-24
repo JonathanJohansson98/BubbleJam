@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 705507994}
+  m_Sun: {fileID: 0}
   m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!108 &705507994 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 22072342214442064, guid: 9964c6c21c015b1489441366c98191b1, type: 3}
-  m_PrefabInstance: {fileID: 1443332090146355791}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &935803874
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,7 +333,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1443332090146355791
+--- !u!1001 &2000116604
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -403,10 +398,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1503760485342360505, guid: a2a6325b44e99494f88fb4a330b3fcd8, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 0.4
-      objectReference: {fileID: 0}
     - target: {fileID: 3136455446190549903, guid: a2a6325b44e99494f88fb4a330b3fcd8, type: 3}
       propertyPath: m_Name
       value: BlowingVent
@@ -463,4 +454,4 @@ SceneRoots:
   - {fileID: 1885376482}
   - {fileID: 935803878}
   - {fileID: 1907198022982599125}
-  - {fileID: 1443332090146355791}
+  - {fileID: 2000116604}
