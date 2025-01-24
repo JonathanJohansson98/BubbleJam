@@ -5,7 +5,7 @@ public class FanScript : MonoBehaviour
     [SerializeField] private GameObject targetObject;
     [SerializeField] private Rigidbody targetRigidBody;
 
-    [SerializeField,Range(.1f, 1)] private float forceMagnitude = 10f;
+    [SerializeField,Range(.1f, 10)] private float forceMagnitude = 10f;
 
     [SerializeField] private GameObject fanDebugObject;
 
