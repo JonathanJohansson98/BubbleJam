@@ -40,13 +40,13 @@ void OnTriggerEnter(Collider other)
         if (currentHealth <= 0)
         {
             //play animations or sounds
-            Die();
+            StartCoroutine(Die());
             Debug.Log("HealthUpdate() runs");
             Debug.Log("Current Health = " + currentHealth);
         }
     }
 
-    public void Die() 
+    public IEnumerator Die() 
     {
     
         if (rend != null)
@@ -59,10 +59,9 @@ void OnTriggerEnter(Collider other)
             col.enabled = false;
         }
         Debug.Log("Die() runs");
-      RespawnPlayerAtCheckpoint();
-      //yield return new WaitForSeconds(1f);
-      //yield return null;
       
+      yield return new WaitForSeconds(1f);
+      RespawnPlayerAtCheckpoint();
     }
 
     private void RespawnPlayerAtCheckpoint()
