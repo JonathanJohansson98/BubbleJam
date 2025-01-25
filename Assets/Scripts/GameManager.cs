@@ -27,16 +27,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (!isGamePaused && Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isGamePaused)
-            {
-                ResumeGame();
-            }
-            else
-            {
-                PauseGame();
-            }
+            PauseGame();
         }
     }
 
@@ -51,7 +44,9 @@ public class GameManager : MonoBehaviour
     [ContextMenu("Pause")]
     public void PauseGame()
     {
-        Instantiate<PauseMenu>(pauseOverlay, Vector3.zero, Quaternion.identity).Open();
+        if(!isGamePaused)
+            Instantiate<PauseMenu>(pauseOverlay, Vector3.zero, Quaternion.identity).Open();
+
         isGamePaused = true;
         Time.timeScale = 0f;
     }
