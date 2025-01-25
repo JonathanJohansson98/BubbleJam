@@ -13,7 +13,6 @@ public class FanScript : MonoBehaviour
     Vector3 clickPosition;
     Vector3 targetScreenPosition;
     float ClickDistanceFromBubbleCenter;
-    float ClickDistanceFromBubbleEdge;
 
     Vector3 forceDirection;
     Vector3 force;
@@ -38,14 +37,13 @@ public class FanScript : MonoBehaviour
             clickPosition = Input.mousePosition;
             targetScreenPosition = Camera.main.WorldToScreenPoint(targetObject.transform.position);
             ClickDistanceFromBubbleCenter = (clickPosition - targetScreenPosition).magnitude;
-            ClickDistanceFromBubbleEdge = (clickPosition - targetScreenPosition).magnitude - offset;
 
             forceDirection = clickPosition - targetScreenPosition;
 
             if (targetRigidBody != null)
             {
-                var forceExert = Mathf.Max(maximumForce, forceMagnitude / ClickDistanceFromBubbleEdge);
-                forceExert = Mathf.Min(minimumForce, forceMagnitude / ClickDistanceFromBubbleEdge);
+                var forceExert = Mathf.Max(maximumForce, forceMagnitude / ClickDistanceFromBubbleCenter);
+                forceExert = Mathf.Min(minimumForce, forceMagnitude / ClickDistanceFromBubbleCenter);
                 forceDirection.z = 0;
                 force = -forceDirection.normalized * forceExert;
                 Debug.Log("Force: " + force);
@@ -82,25 +80,24 @@ public class FanScript : MonoBehaviour
 
     private void StartRotating(float appliedForceMagnitude)
     {
-        float targetSpeed = Mathf.Clamp(appliedForceMagnitude, 0f, 100f); // Adjust the max speed if needed
+        float targetSpeed = Mathf.Clamp(appliedForceMagnitude, 0f, 100f);
         currentRotationSpeed = Mathf.Lerp(currentRotationSpeed, targetSpeed, Time.fixedDeltaTime * rotationSmoothing);
     }
 
     private void StopRotating()
     {
-        // Gradually decrease rotation speed over time
         currentRotationSpeed = Mathf.Lerp(currentRotationSpeed, 0f, Time.fixedDeltaTime * rotationSmoothing);
     }
 
     private void RotateTarget()
     {
-        if (currentRotationSpeed > 0.01f) // Prevent unnecessary tiny rotations
+        if (currentRotationSpeed > 0.01f)
         {
             targetObject.transform.Rotate(0, 0, rotationDirection * currentRotationSpeed * Time.fixedDeltaTime * 100);
         }
         else
         {
-            currentRotationSpeed = 0f; // Stop completely when speed is very low
+            currentRotationSpeed = 0f; 
         }
     }
 }

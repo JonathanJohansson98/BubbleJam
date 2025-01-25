@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Parallax : MonoBehaviour
@@ -7,11 +5,14 @@ public class Parallax : MonoBehaviour
     private float length, startpos;
     public GameObject cam;
     public float parallexEffect;
+
     void Start()
     {
         startpos = transform.position.x;
-        length = GetComponent<SpriteRenderer>().bounds.size.x;
+        if(TryGetComponent<SpriteRenderer>(out SpriteRenderer sr))
+            length = sr.bounds.size.x;
     }
+
     void Update()
     {
         float temp = (cam.transform.position.x * (1 - parallexEffect));

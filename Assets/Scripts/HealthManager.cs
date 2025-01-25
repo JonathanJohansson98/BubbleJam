@@ -1,4 +1,3 @@
-using DG.Tweening;
 using UnityEngine;
 
 public class HealthManager : MonoBehaviour
@@ -86,7 +85,7 @@ public class HealthManager : MonoBehaviour
         }
     }
 
-    [ContextMenu("Die")]
+    //[ContextMenu("Die")]
     public void Die()
     {
         bubblePopAnimator.ResetTrigger("Pop");

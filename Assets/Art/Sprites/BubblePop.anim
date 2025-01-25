@@ -35,7 +35,7 @@ AnimationClip:
     - time: 0.5
       value: {fileID: 21300000, guid: 9708f4048504d52459bc8a0a58431747, type: 3}
     attribute: m_Sprite
-    path: 
+    path: Visual
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -47,7 +47,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 3966078249
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -87,4 +87,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.5
+    functionName: Death
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
