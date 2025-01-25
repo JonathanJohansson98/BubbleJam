@@ -9,7 +9,7 @@ public class FanScript : MonoBehaviour
 
     public bool playerAlive = true;
 
-    [SerializeField, Range(1, 300)] private float forceMagnitude = 10f;
+    //[SerializeField, Range(1, 300)] private float forceMagnitude = 10f;
 
     Vector3 clickPosition;
     Vector3 targetScreenPosition;
@@ -18,9 +18,9 @@ public class FanScript : MonoBehaviour
     Vector3 forceDirection;
     Vector3 force;
     [SerializeField] float maximumForce = -3;
-    [SerializeField] float minimumForce = 3;
+    //[SerializeField] float minimumForce = 3;
 
-    [SerializeField] float offset = 3;
+    //[SerializeField] float offset = 3;
 
     [SerializeField, Range(0.1f, 5f)] private float rotationSmoothing = 1f;
     private float currentRotationSpeed = 0f;
