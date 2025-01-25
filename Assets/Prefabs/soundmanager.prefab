@@ -47,14 +47,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundCategories:
   - categoryName: Motivational
-    audioClips: []
+    audioClips:
+    - {fileID: 8300000, guid: 332b994252e92cc42a07e2f22d905cb9, type: 3}
   - categoryName: Demotivational
-    audioClips: []
+    audioClips:
+    - {fileID: 8300000, guid: b4480bde8818c5f4c907906aeb4e18f7, type: 3}
+    - {fileID: 8300000, guid: 60616b7ca95c7e843b6379381149f27a, type: 3}
+    - {fileID: 8300000, guid: 5bee201c97be7b94a9be623625c576ff, type: 3}
+    - {fileID: 8300000, guid: 1caa21ab4943e0848af3a083daa8c654, type: 3}
+    - {fileID: 8300000, guid: 5a2f00b05bc1a8a4daa1c5c48a7e8502, type: 3}
+    - {fileID: 8300000, guid: f1e30530e4bcbc2499002e6c5bda11ea, type: 3}
   - categoryName: Music
     audioClips:
-    - {fileID: 8300000, guid: c584886fab04c364496531e569720879, type: 3}
+    - {fileID: 8300000, guid: 23d24ac308193ff46bcc71b2ba14980d, type: 3}
+    - {fileID: 8300000, guid: 2fca32f493fec1b4a93f7c5e92ff43c3, type: 3}
+    - {fileID: 8300000, guid: 05be554d5c243f14496bb4c9778e1233, type: 3}
+    - {fileID: 8300000, guid: f073e045f2c98e84587634194698bf56, type: 3}
   - categoryName: SFX
-    audioClips: []
+    audioClips:
+    - {fileID: 8300000, guid: b82b4c4038ac81d4daf785f6265b22de, type: 3}
+    - {fileID: 8300000, guid: 72a8febec588bd94aa292336e04e4758, type: 3}
+  - categoryName: Death
+    audioClips:
+    - {fileID: 8300000, guid: 9d53249ce588cd044a3c1ab028f740cb, type: 3}
+    - {fileID: 8300000, guid: 2683002488606d948aa0685cf2e56890, type: 3}
+    - {fileID: 8300000, guid: 4eb4fdb6de511cb469e17b8b29dd66b2, type: 3}
   audioSource: {fileID: 3506744841536405349}
 --- !u!82 &3506744841536405349
 AudioSource:
