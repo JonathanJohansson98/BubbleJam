@@ -2664,6 +2664,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5577107853281086589, guid: df863f59e4fe04648bdbbe9f14a1e4c3, type: 3}
+      propertyPath: soundCategories.Array.data[2].audioClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5577107853281086589, guid: df863f59e4fe04648bdbbe9f14a1e4c3, type: 3}
+      propertyPath: soundCategories.Array.data[3].audioClips.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5577107853281086589, guid: df863f59e4fe04648bdbbe9f14a1e4c3, type: 3}
+      propertyPath: soundCategories.Array.data[2].audioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: c584886fab04c364496531e569720879, type: 3}
     - target: {fileID: 6389710262724215569, guid: df863f59e4fe04648bdbbe9f14a1e4c3, type: 3}
       propertyPath: m_Name
       value: soundmanager

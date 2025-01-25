@@ -35,6 +35,12 @@ public class SoundManager : MonoBehaviour
         LoadUsedIndices();
     }
 
+    private void Start()
+    {
+        PlaySound("Music", 0);
+
+    }
+
     public void PlayRandomSound(string category)
     {
         if (!audioSource) return;
@@ -88,6 +94,8 @@ public class SoundManager : MonoBehaviour
         }
 
         audioSource.PlayOneShot(soundCategory.audioClips[id]);
+
+        Debug.Log("Playing sound: " + soundCategory.audioClips[id]);
     }
 
     private void SaveUsedIndices()

@@ -51,11 +51,10 @@ MonoBehaviour:
   - categoryName: Demotivational
     audioClips: []
   - categoryName: Music
-    audioClips: []
-  - categoryName: SFX
     audioClips:
     - {fileID: 8300000, guid: c584886fab04c364496531e569720879, type: 3}
-    - {fileID: 8300000, guid: cc4f7a6976ab2b148b3fd62f7ee384f4, type: 3}
+  - categoryName: SFX
+    audioClips: []
   audioSource: {fileID: 3506744841536405349}
 --- !u!82 &3506744841536405349
 AudioSource:
