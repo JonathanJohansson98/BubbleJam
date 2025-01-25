@@ -88,8 +88,6 @@ public class HealthManager : MonoBehaviour
     //[ContextMenu("Die")]
     public void Die()
     {
-        bubblePopAnimator.ResetTrigger("Pop");
-
         bubblePopAnimator.SetTrigger("Pop");
     }
 

@@ -689,6 +689,46 @@ PrefabInstance:
       propertyPath: rotationSmoothing
       value: 4.27
       objectReference: {fileID: 0}
+    - target: {fileID: 6732232105684225691, guid: d6f1964769cb4144e9dab04562f0e669, type: 3}
+      propertyPath: fanForceCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6732232105684225691, guid: d6f1964769cb4144e9dab04562f0e669, type: 3}
+      propertyPath: fanForceCurve.m_Curve.Array.data[1].time
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 6732232105684225691, guid: d6f1964769cb4144e9dab04562f0e669, type: 3}
+      propertyPath: fanForceCurve.m_Curve.Array.data[2].time
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6732232105684225691, guid: d6f1964769cb4144e9dab04562f0e669, type: 3}
+      propertyPath: fanForceCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6732232105684225691, guid: d6f1964769cb4144e9dab04562f0e669, type: 3}
+      propertyPath: fanForceCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6732232105684225691, guid: d6f1964769cb4144e9dab04562f0e669, type: 3}
+      propertyPath: fanForceCurve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 6732232105684225691, guid: d6f1964769cb4144e9dab04562f0e669, type: 3}
+      propertyPath: fanForceCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 6732232105684225691, guid: d6f1964769cb4144e9dab04562f0e669, type: 3}
+      propertyPath: fanForceCurve.m_Curve.Array.data[0].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 6732232105684225691, guid: d6f1964769cb4144e9dab04562f0e669, type: 3}
+      propertyPath: fanForceCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 6732232105684225691, guid: d6f1964769cb4144e9dab04562f0e669, type: 3}
+      propertyPath: fanForceCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     - target: {fileID: 9135698139835772007, guid: d6f1964769cb4144e9dab04562f0e669, type: 3}
       propertyPath: m_LocalPosition.x
       value: -22.88
@@ -774,8 +814,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   playerCharacter: {fileID: 4779227872469239803}
-  bubblePopAnimator: {fileID: 0}
-  fanScript: {fileID: 0}
+  bubblePopAnimator: {fileID: 1552823366606534677}
+  fanScript: {fileID: 4908385753958416727}
   gravityScale: 1
   rb: {fileID: 3918907423900207325}
 --- !u!95 &1552823366606534677

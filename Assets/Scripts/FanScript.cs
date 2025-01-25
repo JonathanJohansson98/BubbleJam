@@ -5,6 +5,7 @@ public class FanScript : MonoBehaviour
 {
     [SerializeField] private GameObject targetObject;
     [SerializeField] private Rigidbody targetRigidBody;
+    [SerializeField] private AnimationCurve fanForceCurve;
 
     public bool playerAlive = true;
 
@@ -42,8 +43,10 @@ public class FanScript : MonoBehaviour
 
             if (targetRigidBody != null)
             {
-                var forceExert = Mathf.Max(maximumForce, forceMagnitude / ClickDistanceFromBubbleCenter);
-                forceExert = Mathf.Min(minimumForce, forceMagnitude / ClickDistanceFromBubbleCenter);
+                Debug.LogError($"Force:{fanForceCurve.Evaluate(ClickDistanceFromBubbleCenter)}");
+                var forceExert = maximumForce * - fanForceCurve.Evaluate(ClickDistanceFromBubbleCenter);
+                //var forceExert = Mathf.Max(maximumForce, forceMagnitude / ClickDistanceFromBubbleCenter);
+                //forceExert = Mathf.Min(minimumForce, forceMagnitude / ClickDistanceFromBubbleCenter);
                 forceDirection.z = 0;
                 force = -forceDirection.normalized * forceExert;
                 Debug.Log("Force: " + force);
