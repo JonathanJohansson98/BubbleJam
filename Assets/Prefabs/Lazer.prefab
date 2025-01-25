@@ -169,7 +169,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -297,13 +297,72 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lazerWidth: 3
-  lazerLength: 3
+  lazerLengthModifier: 10
   lineRenderer: {fileID: 1799700838920949964}
-  laserColliderArea: {fileID: 7867663695167824844}
   laserBaseOffset: 1.6
   layerMask:
     serializedVersion: 2
     m_Bits: 8
+  laserLenthCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.006060523
+      outSlope: 0.006060523
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 1
+    - serializedVersion: 3
+      time: 3.0852861
+      value: 0.013952315
+      inSlope: 0.008130788
+      outSlope: 0.008130788
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 7.8930182
+      value: 0.068313725
+      inSlope: -0.008074315
+      outSlope: -0.008074315
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.28690052
+    - serializedVersion: 3
+      time: 12.85725
+      value: 0.050958037
+      inSlope: 0.0014729978
+      outSlope: 0.0014729978
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 13.091376
+      value: 0.8248259
+      inSlope: 1.1245553
+      outSlope: 1.1245553
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8757257455818778063
 GameObject:
   m_ObjectHideFlags: 0
