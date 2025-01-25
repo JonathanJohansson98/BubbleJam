@@ -13,10 +13,14 @@ public class FanScript : MonoBehaviour
     Vector3 clickPosition;
     Vector3 targetScreenPosition;
     float ClickDistanceFromBubbleCenter;
+    float ClickDistanceFromBubbleEdge;
+
     Vector3 forceDirection;
     Vector3 force;
     [SerializeField] float maximumForce = -3;
     [SerializeField] float minimumForce = 3;
+
+    [SerializeField] float offset = 3;
 
     [SerializeField, Range(0.1f, 5f)] private float rotationSmoothing = 1f;
     private float currentRotationSpeed = 0f;
@@ -34,13 +38,14 @@ public class FanScript : MonoBehaviour
             clickPosition = Input.mousePosition;
             targetScreenPosition = Camera.main.WorldToScreenPoint(targetObject.transform.position);
             ClickDistanceFromBubbleCenter = (clickPosition - targetScreenPosition).magnitude;
+            ClickDistanceFromBubbleEdge = (clickPosition - targetScreenPosition).magnitude - offset;
 
             forceDirection = clickPosition - targetScreenPosition;
 
             if (targetRigidBody != null)
             {
-                var forceExert = Mathf.Max(maximumForce, forceMagnitude / ClickDistanceFromBubbleCenter);
-                forceExert = Mathf.Min(minimumForce, forceMagnitude / ClickDistanceFromBubbleCenter);
+                var forceExert = Mathf.Max(maximumForce, forceMagnitude / ClickDistanceFromBubbleEdge);
+                forceExert = Mathf.Min(minimumForce, forceMagnitude / ClickDistanceFromBubbleEdge);
                 forceDirection.z = 0;
                 force = -forceDirection.normalized * forceExert;
                 Debug.Log("Force: " + force);

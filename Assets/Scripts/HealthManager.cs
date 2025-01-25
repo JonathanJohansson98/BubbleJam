@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class HealthManager : MonoBehaviour
@@ -8,13 +7,15 @@ public class HealthManager : MonoBehaviour
     public int maxHealth = 1;
 
     public GameObject playerCharacter;
-    //public GameObject currentCheckpoint;
     private int latestCheckpoint;
 
     private Renderer rend;
     private Collider col;
     private TrailRenderer trail;
     private ParticleSystem part;
+
+    [SerializeField] private Animator bubblePopAnimator;
+    [SerializeField] private FanScript fanScript;
 
 
     // Gravity Scale editable on the inspector
@@ -27,7 +28,7 @@ public class HealthManager : MonoBehaviour
 
     public static float globalGravity = -1.81f;
 
-    Rigidbody m_rb;
+    [SerializeField] Rigidbody rb;
 
     void Start()
     {
@@ -42,7 +43,7 @@ public class HealthManager : MonoBehaviour
         if (currentHealth <= 0)
         {
             Vector3 gravity = globalGravity * gravityScale * Vector3.up;
-            m_rb.AddForce(gravity, ForceMode.Impulse);
+            rb.AddForce(gravity, ForceMode.Impulse);
         }
     }
 
@@ -85,14 +86,19 @@ public class HealthManager : MonoBehaviour
         }
     }
 
+    [ContextMenu("Die")]
     public void Die()
     {
+        bubblePopAnimator.ResetTrigger("Pop");
 
-        FanScript fanScript = GetComponent<FanScript>();
+        bubblePopAnimator.SetTrigger("Pop");
+    }
+
+    public void Death()
+    {
         fanScript.playerAlive = false;
-        playerCharacter.transform.position += new Vector3(0,0,-3);
-        m_rb = GetComponent<Rigidbody>();
-        m_rb.useGravity = false;
+        playerCharacter.transform.position += new Vector3(0, 0, -3);
+        rb.useGravity = false;
         if (rend != null)
         {
             rend.enabled = false;
@@ -105,10 +111,9 @@ public class HealthManager : MonoBehaviour
         //    col.enabled = false;
         //}
         Debug.Log("Die() runs");
-      //RespawnPlayerAtCheckpoint();
-      //yield return new WaitForSeconds(1f);
-      //yield return null;
-      
+        //RespawnPlayerAtCheckpoint();
+        //yield return new WaitForSeconds(1f);
+        //yield return null;
     }
 
     private void RespawnPlayerAtCheckpoint()
@@ -126,11 +131,9 @@ public class HealthManager : MonoBehaviour
     {
         currentHealth = maxHealth;
         Debug.Log("Restore Control");
-        FanScript fanScript = GetComponent<FanScript>();
         fanScript.playerAlive = true;
         playerCharacter.transform.position += new Vector3(0, 0, 3);
-        m_rb = GetComponent<Rigidbody>();
-        m_rb.useGravity = true;
+        rb.useGravity = true;
         if (rend != null) rend.enabled = true;
         if (trail != null) trail.enabled = true;
         if (part != null) part.Play();
