@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   affectedTriggerArea: {fileID: 177680313926321013}
-  forceMagnitude: 4
+  forceMagnitude: 8
   affectedTag: Player
 --- !u!1 &3314984260571951163
 GameObject:
