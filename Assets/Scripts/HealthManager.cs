@@ -94,7 +94,7 @@ public class HealthManager : MonoBehaviour
     public void Death()
     {
         fanScript.playerAlive = false;
-        playerCharacter.transform.position += new Vector3(0, 0, -3);
+        playerCharacter.transform.position += new Vector3(0, 0, -4);
         rb.useGravity = false;
         if (rend != null)
         {
@@ -129,7 +129,7 @@ public class HealthManager : MonoBehaviour
         currentHealth = maxHealth;
         Debug.Log("Restore Control");
         fanScript.playerAlive = true;
-        playerCharacter.transform.position += new Vector3(0, 0, 3);
+        playerCharacter.transform.position += new Vector3(0, 0, 4);
         rb.useGravity = true;
         if (rend != null) rend.enabled = true;
         if (trail != null) trail.enabled = true;

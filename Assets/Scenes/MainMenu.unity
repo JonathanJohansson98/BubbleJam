@@ -723,7 +723,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_SizeDelta: {x: 1940, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1034501986
 MonoBehaviour:
@@ -820,8 +820,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Anni Tuomainen\nEdvin Nordvall\nErikas Klesciovas\nJonathan Johansson\nOliver
-    Karlsson\r\nSimon Lindstr\xF6m"
+  m_text: 'Anni Tuomainen
+
+    Edvin Nordvall
+
+    Erikas Klesciovas
+
+    Jonathan
+    Johansson
+
+    Oliver Karlsson
+
+    Simon Lindstrom'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0ee6d6bc1e4a6f84c81f3199cca6afca, type: 2}
   m_sharedMaterial: {fileID: -5645487269228080661, guid: 0ee6d6bc1e4a6f84c81f3199cca6afca, type: 2}
@@ -1159,8 +1169,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 163, y: -542.65}
-  m_SizeDelta: {x: -1678.9614, y: -972.6539}
+  m_AnchoredPosition: {x: 163, y: -738}
+  m_SizeDelta: {x: -1678.9614, y: -996.67456}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1593114641
 MonoBehaviour:
