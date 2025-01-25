@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -17,7 +14,6 @@ public class MainMenuScript : MonoBehaviour
     {
         startGame.onClick.AddListener(StartGame);
         exitGame.onClick.AddListener(ExitGame);
-        options.onClick.AddListener(Options);
         credits.onClick.AddListener(Credits);
     }
 
