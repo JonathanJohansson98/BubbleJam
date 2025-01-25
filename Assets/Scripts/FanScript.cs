@@ -18,6 +18,8 @@ public class FanScript : MonoBehaviour
     float ClickDistanceFromBubbleEdge;
     Vector3 forceDirection;
     Vector3 force;
+    [SerializeField] float maximumForce = -3;
+    [SerializeField] float minimumForce = 3;
 
     void Update()
     {
@@ -32,8 +34,11 @@ public class FanScript : MonoBehaviour
 
             if (targetRigidBody != null)
             {
+                var forceExert = Mathf.Max(maximumForce, forceMagnitude / ClickDistanceFromBubbleEdge);
+                forceExert = Mathf.Min(minimumForce, forceMagnitude / ClickDistanceFromBubbleEdge);
                 forceDirection.z = 0;
-                force = -forceDirection.normalized * forceMagnitude / ClickDistanceFromBubbleEdge;
+                force = -forceDirection.normalized * forceExert;
+                Debug.Log("Force: " + force);
             }
 
         }
