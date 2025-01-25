@@ -6,11 +6,12 @@ using UnityEngine;
 public class Lazer : MonoBehaviour
 {
     [SerializeField] private float lazerWidth = 1;
-    [SerializeField] private float lazerLength = 100;
+    [SerializeField] private float lazerLengthModifier = 100;
+    private float lazerLength = 1;
     [SerializeField] private LineRenderer lineRenderer;
-    [SerializeField] private BoxCollider laserColliderArea;
     [SerializeField] private float laserBaseOffset;
     [SerializeField] private LayerMask layerMask;
+    [SerializeField] private AnimationCurve laserLenthCurve;
 
     private void Awake()
     {
@@ -19,19 +20,16 @@ public class Lazer : MonoBehaviour
 
     private void Start()
     {
-        laserColliderArea.size = new Vector3(lazerWidth / 10, lazerLength);
-        laserColliderArea.center = transform.up * laserBaseOffset;
-
-        lineRenderer.positionCount = 2;
-        lineRenderer.SetPosition(0, transform.position - transform.right * lazerWidth / 25);
-        lineRenderer.SetPosition(1, transform.position - transform.right * lazerWidth / 25 + transform.up * lazerLength);
-        lineRenderer.startWidth = lazerWidth;
-        lineRenderer.endWidth = lazerWidth;
+        UpdateLaser();
     }
 
     private void Update()
     {
+        UpdateLaser();
+
         var hit = Physics.Raycast(transform.position, transform.up, out RaycastHit hitInfo, lazerLength, layerMask);
+        Debug.Log($"Lazer length {evaluatedLength}");
+
 
         if (!hit)
             return;
@@ -44,14 +42,23 @@ public class Lazer : MonoBehaviour
         }
     }
 
+    float evaluatedLength = 1;
+
+    private void UpdateLaser()
+    {
+        evaluatedLength = laserLenthCurve.Evaluate(Time.time % laserLenthCurve.keys[laserLenthCurve.length - 1].time);
+        lazerLength = evaluatedLength * lazerLengthModifier;
+
+        lineRenderer.positionCount = 2;
+        lineRenderer.SetPosition(0, transform.position - transform.right * lazerWidth / 25);
+        lineRenderer.SetPosition(1, transform.position - transform.right * lazerWidth / 25 + transform.up * lazerLength);
+        lineRenderer.startWidth = lazerWidth;
+        lineRenderer.endWidth = lazerWidth;
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position, transform.position + transform.up * lazerLength);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log(other);
     }
 }
