@@ -13,6 +13,8 @@ public class HealthManager : MonoBehaviour
 
     private Renderer rend;
     private Collider col;
+    private TrailRenderer trail;
+    private ParticleSystem part;
 
 
     // Gravity Scale editable on the inspector
@@ -32,6 +34,8 @@ public class HealthManager : MonoBehaviour
         currentHealth = maxHealth;
         rend = GetComponent<Renderer>();
         col = GetComponent<Collider>();
+        trail = GetComponentInChildren<TrailRenderer>();
+        part = GetComponentInChildren<ParticleSystem>();
     }
     void FixedUpdate()
     {
@@ -66,7 +70,7 @@ public class HealthManager : MonoBehaviour
         {
             currentHealth = currentHealth - 1;
             HealthUpdate();
-            Debug.Log("YOU DIED TO" + other.gameObject.name);
+            Debug.Log("YOU DIED TO " + other.gameObject.name);
         }
     }
 
@@ -81,7 +85,7 @@ public class HealthManager : MonoBehaviour
         }
     }
 
-    private void Die()
+    public void Die()
     {
 
         FanScript fanScript = GetComponent<FanScript>();
@@ -92,6 +96,8 @@ public class HealthManager : MonoBehaviour
         if (rend != null)
         {
             rend.enabled = false;
+            trail.enabled = false;
+            part.Stop();
         }
 
         //if (col != null)
@@ -126,6 +132,8 @@ public class HealthManager : MonoBehaviour
         m_rb = GetComponent<Rigidbody>();
         m_rb.useGravity = true;
         if (rend != null) rend.enabled = true;
+        if (trail != null) trail.enabled = true;
+        if (part != null) part.Play();
 
 
         //if (rend != null) rend.enabled = true;

@@ -1,18 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Image fanImage;
+    public FanScript fanScript;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
+        //fanImage.transform.position = Input.mousePosition;
+        
+        if (fanScript.playerAlive == true)
+        {
+            fanImage.enabled = true;
+            fanImage.transform.position = Input.mousePosition;
+            Cursor.visible = false;
+        }
+        else
+        {
+            fanImage.enabled = false;
+            Cursor.visible = true;
+        }
         
     }
 }
