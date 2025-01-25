@@ -10,12 +10,9 @@ public class FanScript : MonoBehaviour
 
     [SerializeField,Range(1, 300)] private float forceMagnitude = 10f;
 
-    [SerializeField] float bubbleSizeOffset = 5;
-
     Vector3 clickPosition;
     Vector3 targetScreenPosition;
     float ClickDistanceFromBubbleCenter;
-    float ClickDistanceFromBubbleEdge;
     Vector3 forceDirection;
     Vector3 force;
     [SerializeField] float maximumForce = -3;
@@ -28,7 +25,6 @@ public class FanScript : MonoBehaviour
             clickPosition = Input.mousePosition;
             targetScreenPosition = Camera.main.WorldToScreenPoint(targetObject.transform.position);
             ClickDistanceFromBubbleCenter = (clickPosition - targetScreenPosition).magnitude;
-            ClickDistanceFromBubbleEdge = ClickDistanceFromBubbleCenter - bubbleSizeOffset;
 
             forceDirection = clickPosition - targetScreenPosition;
 
@@ -47,7 +43,7 @@ public class FanScript : MonoBehaviour
         {
             clickPosition = Vector3.zero;
             targetScreenPosition = Vector3.zero;
-            ClickDistanceFromBubbleEdge = 0;
+            ClickDistanceFromBubbleCenter = 0;
 
             force = Vector3.zero;
         }

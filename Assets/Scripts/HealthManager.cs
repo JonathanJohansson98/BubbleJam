@@ -81,7 +81,7 @@ public class HealthManager : MonoBehaviour
         }
     }
 
-    private void Die()
+    public void Die()
     {
 
         FanScript fanScript = GetComponent<FanScript>();
