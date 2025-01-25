@@ -3,11 +3,12 @@ using UnityEngine;
 public class Parallax : MonoBehaviour
 {
     private float length, startpos;
-    public GameObject cam;
+    GameObject cam;
     public float parallexEffect;
 
     void Start()
     {
+        cam = Camera.main.gameObject;
         startpos = transform.position.x;
         if(TryGetComponent<SpriteRenderer>(out SpriteRenderer sr))
             length = sr.bounds.size.x;

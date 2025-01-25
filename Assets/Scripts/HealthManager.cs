@@ -88,13 +88,14 @@ public class HealthManager : MonoBehaviour
     //[ContextMenu("Die")]
     public void Die()
     {
+        playerCharacter.transform.position += new Vector3(0, 0, -4);
+
         bubblePopAnimator.SetTrigger("Pop");
     }
 
     public void Death()
     {
         fanScript.playerAlive = false;
-        playerCharacter.transform.position += new Vector3(0, 0, -4);
         rb.useGravity = false;
         if (rend != null)
         {
@@ -115,13 +116,13 @@ public class HealthManager : MonoBehaviour
 
     private void RespawnPlayerAtCheckpoint()
     {
-            //playerCharacter.transform.position = currentCheckpoint.transform.position;
+        //playerCharacter.transform.position = currentCheckpoint.transform.position;
 
-            currentHealth = maxHealth;
-            Debug.Log("RespawnPlayerAtCheckpoint() runs");
+        currentHealth = maxHealth;
+        Debug.Log("RespawnPlayerAtCheckpoint() runs");
 
-            if (rend != null) rend.enabled = true;
-            if (col != null) col.enabled = true;
+        if (rend != null) rend.enabled = true;
+        if (col != null) col.enabled = true;
     }
 
     private void restoreControl()
@@ -129,7 +130,7 @@ public class HealthManager : MonoBehaviour
         currentHealth = maxHealth;
         Debug.Log("Restore Control");
         fanScript.playerAlive = true;
-        playerCharacter.transform.position += new Vector3(0, 0, 4);
+        playerCharacter.transform.position = new Vector3(playerCharacter.transform.position.x, playerCharacter.transform.position.y, 0);
         rb.useGravity = true;
         if (rend != null) rend.enabled = true;
         if (trail != null) trail.enabled = true;

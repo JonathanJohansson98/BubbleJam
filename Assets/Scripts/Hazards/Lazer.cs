@@ -1,17 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(LineRenderer))]
 public class Lazer : MonoBehaviour
 {
     [SerializeField] private float lazerWidth = 1;
     [SerializeField] private float lazerLengthModifier = 100;
-    private float lazerLength = 1;
     [SerializeField] private LineRenderer lineRenderer;
     [SerializeField] private float laserBaseOffset;
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private AnimationCurve laserLenthCurve;
+
+    [SerializeField] UnityEvent LazerChargeEvent;
+    [SerializeField] UnityEvent LazerStopChargeEvent;
+
+
+    private float lazerLength = 1;
 
     private void Awake()
     {
@@ -28,8 +32,6 @@ public class Lazer : MonoBehaviour
         UpdateLaser();
 
         var hit = Physics.Raycast(transform.position, transform.up, out RaycastHit hitInfo, lazerLength, layerMask);
-        Debug.Log($"Lazer length {evaluatedLength}");
-
 
         if (!hit)
             return;
@@ -48,6 +50,16 @@ public class Lazer : MonoBehaviour
     {
         evaluatedLength = laserLenthCurve.Evaluate(Time.time % laserLenthCurve.keys[laserLenthCurve.length - 1].time);
         lazerLength = evaluatedLength * lazerLengthModifier;
+
+        if (evaluatedLength < .8f)
+        {
+            LazerChargeEvent.Invoke();
+        }
+
+        if (evaluatedLength >= .8f) 
+        { 
+            LazerStopChargeEvent.Invoke();
+        }
 
         lineRenderer.positionCount = 2;
         lineRenderer.SetPosition(0, transform.position - transform.right * lazerWidth / 25);
