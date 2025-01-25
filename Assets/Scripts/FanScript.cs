@@ -8,7 +8,7 @@ public class FanScript : MonoBehaviour
 
     public bool playerAlive = true;
 
-    [SerializeField,Range(1, 100)] private float forceMagnitude = 10f;
+    [SerializeField,Range(1, 300)] private float forceMagnitude = 10f;
 
     [SerializeField] float bubbleSizeOffset = 5;
 
