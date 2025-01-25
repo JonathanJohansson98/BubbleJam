@@ -5,56 +5,43 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class Lazer : MonoBehaviour
 {
+    [SerializeField] private float lazerWidth = 1;
     [SerializeField] private float lazerLength = 100;
-    [SerializeField] private Color lazerColor = Color.red;
     [SerializeField] private LineRenderer lineRenderer;
-    [SerializeField] private Collider laserColliderArea;
+    [SerializeField] private BoxCollider laserColliderArea;
+    [SerializeField] private float laserBaseOffset;
+    [SerializeField] private LayerMask layerMask;
 
     private void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
     }
+
     private void Start()
     {
-        lineRenderer.positionCount = 2;
-        lineRenderer.SetPosition(0, transform.position);
-        lineRenderer.SetPosition(1, transform.position + transform.up * lazerLength);   
-        lineRenderer.startWidth = laserColliderArea.bounds.size.x;
-        lineRenderer.endWidth = laserColliderArea.bounds.size.x;
+        laserColliderArea.size = new Vector3(lazerWidth / 10, lazerLength);
+        laserColliderArea.center = transform.up * laserBaseOffset;
 
-        lineRenderer.colorGradient = new Gradient()
-        {
-            colorKeys = new GradientColorKey[]
-            {
-                new GradientColorKey(lazerColor, 0),
-                new GradientColorKey(lazerColor, 1)
-            }
-        };
+        lineRenderer.positionCount = 2;
+        lineRenderer.SetPosition(0, transform.position - transform.right * lazerWidth / 25);
+        lineRenderer.SetPosition(1, transform.position - transform.right * lazerWidth / 25 + transform.up * lazerLength);
+        lineRenderer.startWidth = lazerWidth;
+        lineRenderer.endWidth = lazerWidth;
     }
 
     private void Update()
     {
-        var hit = Physics.Raycast(transform.position, transform.up, out RaycastHit hitInfo, lazerLength);
+        var hit = Physics.Raycast(transform.position, transform.up, out RaycastHit hitInfo, lazerLength, layerMask);
 
         if (!hit)
             return;
 
-        Debug.Log(hitInfo.transform.name);
-        
-        
-        //if (hitInfo)
-        //{
-        //    Debug.Log(hit);
-        //    //lineRenderer.SetPosition(1, hit.point);
-        //    //if (hit.collider.tag == "Player")
-        //    //{
-        //    //    hit.collider.GetComponent<HealthManager>().Die();
-        //    //}
-        //}
-        //else
-        //{
-        //    lineRenderer.SetPosition(1, transform.position + transform.up * lazerLength);
-        //}
+        Debug.LogError(hitInfo.transform.name);
+
+        if (hitInfo.collider.CompareTag("Player"))
+        {
+            hitInfo.collider.attachedRigidbody.gameObject.GetComponent<HealthManager>().Die();
+        }
     }
 
     private void OnDrawGizmosSelected()
