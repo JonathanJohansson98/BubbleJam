@@ -43,7 +43,6 @@ public class FanScript : MonoBehaviour
 
             if (targetRigidBody != null)
             {
-                Debug.LogError($"Force:{fanForceCurve.Evaluate(ClickDistanceFromBubbleCenter)}");
                 var forceExert = maximumForce * - fanForceCurve.Evaluate(ClickDistanceFromBubbleCenter);
                 //var forceExert = Mathf.Max(maximumForce, forceMagnitude / ClickDistanceFromBubbleCenter);
                 //forceExert = Mathf.Min(minimumForce, forceMagnitude / ClickDistanceFromBubbleCenter);
