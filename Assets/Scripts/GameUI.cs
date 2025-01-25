@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -62,10 +60,10 @@ public class GameUI : MonoBehaviour
         {
             fanImage.sprite = fanON1;
             airStreaksImage.sprite = airStreaks1;
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.1f);
             fanImage.sprite = fanON2;
             airStreaksImage.sprite = airStreaks2;
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 }

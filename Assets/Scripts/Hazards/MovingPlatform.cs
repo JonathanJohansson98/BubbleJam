@@ -16,8 +16,8 @@ public class MovingPlatform : MonoBehaviour
             return;
         }
 
-        points.Insert(0, transform.position);
-
+        //points.Insert(0, transform.position);
+        transform.position = points[0];
         MovePlatform();
     }
 
