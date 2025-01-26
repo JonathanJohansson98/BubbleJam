@@ -56572,6 +56572,10 @@ PrefabInstance:
       propertyPath: thisSafeZone
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6066444305692757604, guid: 5eb5a13c3a7b88541a442fd11c090055, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9006314272570711294, guid: 5eb5a13c3a7b88541a442fd11c090055, type: 3}
       propertyPath: m_Name
       value: SafeZoneRegion (10)
@@ -82679,8 +82683,8 @@ Transform:
   m_GameObject: {fileID: 1416994312}
   serializedVersion: 2
   m_LocalRotation: {x: -0.000000013893097, y: -0.000000105528535, z: 0.70710605, w: -0.7071075}
-  m_LocalPosition: {x: 5.5598, y: 13.9632, z: 0}
-  m_LocalScale: {x: 1.7280269, y: 28.905321, z: 1}
+  m_LocalPosition: {x: 5.1458, y: 13.9632, z: 0}
+  m_LocalScale: {x: 1.7280269, y: 29.733315, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1417896319}
