@@ -104,6 +104,10 @@ public class HealthManager : MonoBehaviour
     //[ContextMenu("Die")]
     public void Die()
     {
+        if (currentHealth >= 0)
+        {
+            currentHealth = 0;
+        }
         if (soundBuffer > 1500)
         {
             //sound.StopAllSound();
