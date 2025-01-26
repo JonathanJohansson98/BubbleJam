@@ -54,7 +54,7 @@ public class Leaderboard : MonoBehaviour
     {
         GetFromPlayerPrefs();
 
-        leaderboardEntries.Add(new LeaderboardEntry() {playerName = inputField.text, score = PlayerPrefs.GetInt("Score")});
+        leaderboardEntries.Add(new LeaderboardEntry() {playerName = inputField.text, score = PlayerPrefs.GetFloat("Score")});
 
         SaveLeaderBoardToPlayerprefs();
     }
