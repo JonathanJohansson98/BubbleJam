@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: bae5c9fde426f84438a9f15886c2ae95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -134,7 +134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2661552558963692759
 Transform:
   m_ObjectHideFlags: 0
@@ -4956,7 +4956,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8087158615527175789}
-  - component: {fileID: 7867663695167824844}
   - component: {fileID: 1799700838920949964}
   - component: {fileID: 2636369515427183110}
   m_Layer: 0
@@ -4983,27 +4982,6 @@ Transform:
   - {fileID: 4812033625551670290}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7867663695167824844
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5930940678870435708}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!120 &1799700838920949964
 LineRenderer:
   serializedVersion: 2
@@ -5133,7 +5111,7 @@ MonoBehaviour:
   laserBaseOffset: 1.6
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   laserLenthCurve:
     serializedVersion: 2
     m_Curve:
@@ -5194,6 +5172,36 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  LazerChargeEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4797844077250640835}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  LazerStopChargeEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4797844077250640835}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8757257455818778063
 GameObject:
   m_ObjectHideFlags: 0
