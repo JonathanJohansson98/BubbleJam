@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
@@ -8,7 +9,7 @@ using UnityEngine.UI;
 public class LeaderboardEntry
 {
     public string playerName;
-    public int score;
+    public float score;
 }
 
 public class Leaderboard : MonoBehaviour
@@ -30,7 +31,7 @@ public class Leaderboard : MonoBehaviour
 
         Instantiate<LeaderboardEntryUI>(leaderboardEntry, leaderBoardRoot).SetupTitleEntry();
 
-        foreach (var item in leaderboardEntries)
+        foreach (var item in leaderboardEntries.OrderBy(p=>p.score).Take(6))
         {
             Instantiate<LeaderboardEntryUI>(leaderboardEntry, leaderBoardRoot).SetupEntry(item);
         }

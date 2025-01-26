@@ -7,6 +7,7 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] private Button startGame;
     [SerializeField] private Button exitGame;
     [SerializeField] private Button options;
+    public Animator menuAnimator;
     //[SerializeField] private Button credits;
 
 

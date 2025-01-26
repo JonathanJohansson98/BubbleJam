@@ -38,7 +38,7 @@ public class Lazer : MonoBehaviour
 
         Debug.LogError(hitInfo.transform.name);
 
-        if (hitInfo.collider.CompareTag("Player"))
+        if (hitInfo.collider.CompareTag("Player") && hitInfo.transform.GetComponent<FanScript>().playerAlive)
         {
             hitInfo.collider.attachedRigidbody.gameObject.GetComponent<HealthManager>().Die();
         }

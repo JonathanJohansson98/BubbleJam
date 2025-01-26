@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
@@ -30,10 +31,6 @@ public class PauseMenu : MonoBehaviour
 
     public void Exit()
     {
-        GameManager.instance.EndGame();
-        exitButton.onClick.RemoveListener(Exit);
-        exitButton.interactable = false;
-        Destroy(gameObject);
-
+        Application.Quit();
     }
 }
