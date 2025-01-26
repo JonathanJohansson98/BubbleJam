@@ -11031,8 +11031,16 @@ PrefabInstance:
       value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 4514172878633522098, guid: 9964c6c21c015b1489441366c98191b1, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0.23529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514172878633522098, guid: 9964c6c21c015b1489441366c98191b1, type: 3}
       propertyPath: m_enableAutoSizing
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514172878633522098, guid: 9964c6c21c015b1489441366c98191b1, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 1023410175
       objectReference: {fileID: 0}
     - target: {fileID: 4514172878633522098, guid: 9964c6c21c015b1489441366c98191b1, type: 3}
       propertyPath: m_VerticalAlignment
