@@ -115,7 +115,10 @@ public class HealthManager : MonoBehaviour
             sound.PlayRandomSound("Demotivational");
         }
         sound.PlaySound("Death", 0);
-        playerCharacter.transform.position += new Vector3(0, 0, -4);
+        if (fanScript.playerAlive)
+        {
+            playerCharacter.transform.position += new Vector3(0, 0, -4);
+        }
 
         fanScript.playerAlive = false;
         rb.useGravity = false;
