@@ -8,6 +8,9 @@ public class HealthManager : MonoBehaviour
     public GameObject playerCharacter;
     private int latestCheckpoint;
 
+    [SerializeField] private SpriteRenderer rend;
+    private TrailRenderer trailLine;
+    private ParticleSystem trailParticle;
     private Renderer rend;
     private Collider col;
     private TrailRenderer trail;
@@ -34,10 +37,8 @@ public class HealthManager : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        rend = GetComponent<Renderer>();
-        col = GetComponent<Collider>();
-        trail = GetComponentInChildren<TrailRenderer>();
-        part = GetComponentInChildren<ParticleSystem>();
+        trailLine = GetComponentInChildren<TrailRenderer>();
+        trailParticle = GetComponentInChildren<ParticleSystem>();
     }
     void FixedUpdate()
     {
@@ -104,39 +105,23 @@ public class HealthManager : MonoBehaviour
         sound.PlaySound("Death", 0);
         playerCharacter.transform.position += new Vector3(0, 0, -4);
 
-        bubblePopAnimator.SetTrigger("Pop");
-    }
-
-    public void Death()
-    {
         fanScript.playerAlive = false;
         rb.useGravity = false;
         if (rend != null)
         {
             rend.enabled = false;
-            trail.enabled = false;
-            part.Stop();
+            //trailLine.enabled = false;
+            //trailParticle.Stop();
         }
 
-        //if (col != null)
-        //{
-        //    col.enabled = false;
-        //}
-        Debug.Log("Die() runs");
-        //RespawnPlayerAtCheckpoint();
-        //yield return new WaitForSeconds(1f);
-        //yield return null;
+        bubblePopAnimator.SetTrigger("Pop");
     }
 
-    private void RespawnPlayerAtCheckpoint()
+    public void Death()
     {
-        //playerCharacter.transform.position = currentCheckpoint.transform.position;
+        
 
-        currentHealth = maxHealth;
-        Debug.Log("RespawnPlayerAtCheckpoint() runs");
-
-        if (rend != null) rend.enabled = true;
-        if (col != null) col.enabled = true;
+        Debug.Log("Death() runs");
     }
 
     private void restoreControl()
@@ -147,8 +132,8 @@ public class HealthManager : MonoBehaviour
         playerCharacter.transform.position = new Vector3(playerCharacter.transform.position.x, playerCharacter.transform.position.y, 0);
         rb.useGravity = true;
         if (rend != null) rend.enabled = true;
-        if (trail != null) trail.enabled = true;
-        if (part != null) part.Play();
+        if (trailLine != null) trailLine.enabled = true;
+        if (trailParticle != null) trailParticle.Play();
 
 
         //if (rend != null) rend.enabled = true;
