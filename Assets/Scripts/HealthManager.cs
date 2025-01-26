@@ -11,7 +11,6 @@ public class HealthManager : MonoBehaviour
     [SerializeField] private SpriteRenderer rend;
     private TrailRenderer trailLine;
     private ParticleSystem trailParticle;
-    private Renderer rend;
     private Collider col;
     private TrailRenderer trail;
     private ParticleSystem part;
@@ -110,8 +109,6 @@ public class HealthManager : MonoBehaviour
         if (rend != null)
         {
             rend.enabled = false;
-            //trailLine.enabled = false;
-            //trailParticle.Stop();
         }
 
         bubblePopAnimator.SetTrigger("Pop");
@@ -134,27 +131,5 @@ public class HealthManager : MonoBehaviour
         if (rend != null) rend.enabled = true;
         if (trailLine != null) trailLine.enabled = true;
         if (trailParticle != null) trailParticle.Play();
-
-
-        //if (rend != null) rend.enabled = true;
-        //if (col != null) col.enabled = true;
     }
-
-    //public GameObject playerCharacter;
-    //public GameObject safeZone;
-    //private int latestSafeZone;
-    //[SerializeField] private int thisSafeZone;
-
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.GetComponent<HealthManager>().currentHealth > 0)
-    //    {
-    //        latestSafeZone = thisSafeZone;
-    //    }
-    //    else
-    //    {
-    //        //restoreControl();
-    //    }
-    //}
 }
