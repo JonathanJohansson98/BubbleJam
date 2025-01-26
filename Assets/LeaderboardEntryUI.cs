@@ -1,3 +1,4 @@
+using System.Text;
 using TMPro;
 using UnityEngine;
 
@@ -6,12 +7,10 @@ public class LeaderboardEntryUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI playerNameText;
     [SerializeField] private TextMeshProUGUI scoreText;
 
-    public void SetupEntry(LeaderboardEntry leaderboardEntry) 
+    public void SetupEntry(LeaderboardEntry leaderboardEntry)
     {
         playerNameText.text = leaderboardEntry.playerName;
-
-        scoreText.text = $"{leaderboardEntry.score}";
-
+        scoreText.text = leaderboardEntry.score.ToString("F3");
         gameObject.SetActive(true);
     }
 
