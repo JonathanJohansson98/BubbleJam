@@ -12,6 +12,8 @@ public class HealthManager : MonoBehaviour
     private Collider col;
     private TrailRenderer trail;
     private ParticleSystem part;
+    [SerializeField] private SoundManager sound;
+    private int soundBuffer = 1500;
 
     [SerializeField] private Animator bubblePopAnimator;
     [SerializeField] private FanScript fanScript;
@@ -43,6 +45,11 @@ public class HealthManager : MonoBehaviour
         {
             Vector3 gravity = globalGravity * gravityScale * Vector3.up;
             rb.AddForce(gravity, ForceMode.Impulse);
+        }
+        soundBuffer++;
+        if (!sound.audioSource.isPlaying && soundBuffer > 1500)
+        {
+            sound.PlayRandomSound("Music");
         }
     }
 
@@ -88,6 +95,13 @@ public class HealthManager : MonoBehaviour
     //[ContextMenu("Die")]
     public void Die()
     {
+        if (soundBuffer > 1500)
+        {
+            //sound.StopAllSound();
+            soundBuffer = 0;
+            sound.PlayRandomSound("Demotivational");
+        }
+        sound.PlaySound("Death", 0);
         playerCharacter.transform.position += new Vector3(0, 0, -4);
 
         bubblePopAnimator.SetTrigger("Pop");

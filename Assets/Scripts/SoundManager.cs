@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+    //serialize stuff edit prefab to add sounds
     [System.Serializable]
     public class SoundCategory
     {
@@ -37,12 +38,14 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        PlaySound("Music", 0);
+        //play first song on start game
+        //PlaySound("Music", 0);
 
     }
 
     public void PlayRandomSound(string category)
     {
+        //commentary sounds are played using random sound implementation
         if (!audioSource) return;
 
         SoundCategory soundCategory = soundCategories.Find(sc => sc.categoryName == category);
@@ -78,6 +81,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySound (string category, int id)
     {
+        //Some sounds are played without random sound implementation
         if (!audioSource) return;
 
         SoundCategory soundCategory = soundCategories.Find(sc => sc.categoryName == category);
@@ -100,6 +104,7 @@ public class SoundManager : MonoBehaviour
 
     private void SaveUsedIndices()
     {
+        //save to playerprefs what sounds have already been used
         foreach (var category in usedIndices)
         {
             PlayerPrefs.SetString($"SoundManager_{category.Key}", string.Join(",", category.Value));
@@ -109,6 +114,7 @@ public class SoundManager : MonoBehaviour
 
     private void LoadUsedIndices()
     {
+        //load available sounds and clear saved sounds if no loads are available
         foreach (var category in soundCategories)
         {
             string key = $"SoundManager_{category.categoryName}";
@@ -123,6 +129,15 @@ public class SoundManager : MonoBehaviour
                 }
                 usedIndices[category.categoryName] = indexList;
             }
+        }
+    }
+
+    public void StopAllSound()
+    {
+        //stop all sound
+        if (audioSource.isPlaying)
+        {
+            audioSource.Stop();
         }
     }
 }
