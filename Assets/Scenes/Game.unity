@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3708985, g: 0.3783704, b: 0.35722548, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3866,7 +3866,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2636369515427183110, guid: 6f69a209764c1b4478169649365b0892, type: 3}
       propertyPath: layerMask.m_Bits
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2636369515427183110, guid: 6f69a209764c1b4478169649365b0892, type: 3}
       propertyPath: lazerLengthModifier
@@ -11008,7 +11008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 86440409080145652, guid: 9964c6c21c015b1489441366c98191b1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.53
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2796725189818847770, guid: 9964c6c21c015b1489441366c98191b1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11016,7 +11016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2796725189818847770, guid: 9964c6c21c015b1489441366c98191b1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.53
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2796725189818847770, guid: 9964c6c21c015b1489441366c98191b1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11129,6 +11129,10 @@ PrefabInstance:
     - target: {fileID: 6776974733048987048, guid: 9964c6c21c015b1489441366c98191b1, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.m_NumAlphaKeys
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7474606172194333611, guid: 9964c6c21c015b1489441366c98191b1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7980663506960844297, guid: 9964c6c21c015b1489441366c98191b1, type: 3}
       propertyPath: m_AnchorMax.x
@@ -27393,7 +27397,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2636369515427183110, guid: 6f69a209764c1b4478169649365b0892, type: 3}
       propertyPath: layerMask.m_Bits
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2636369515427183110, guid: 6f69a209764c1b4478169649365b0892, type: 3}
       propertyPath: lazerLengthModifier
@@ -32233,6 +32237,72 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 559125223}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &559979903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 559979906}
+  - component: {fileID: 559979905}
+  - component: {fileID: 559979904}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &559979904
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559979903}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1000, y: 2, z: 100}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &559979905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559979903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: accd659eef8091b4db77e72fb6fed86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &559979906
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559979903}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.868324, y: 100, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &560631890
 GameObject:
   m_ObjectHideFlags: 0
@@ -37741,7 +37811,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2636369515427183110, guid: 6f69a209764c1b4478169649365b0892, type: 3}
       propertyPath: layerMask.m_Bits
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2636369515427183110, guid: 6f69a209764c1b4478169649365b0892, type: 3}
       propertyPath: lazerLengthModifier
@@ -61742,7 +61812,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2636369515427183110, guid: 6f69a209764c1b4478169649365b0892, type: 3}
       propertyPath: layerMask.m_Bits
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2636369515427183110, guid: 6f69a209764c1b4478169649365b0892, type: 3}
       propertyPath: lazerLengthModifier
@@ -63894,7 +63964,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2636369515427183110, guid: 6f69a209764c1b4478169649365b0892, type: 3}
       propertyPath: layerMask.m_Bits
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2636369515427183110, guid: 6f69a209764c1b4478169649365b0892, type: 3}
       propertyPath: lazerLengthModifier
@@ -66278,7 +66348,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2636369515427183110, guid: 6f69a209764c1b4478169649365b0892, type: 3}
       propertyPath: layerMask.m_Bits
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2636369515427183110, guid: 6f69a209764c1b4478169649365b0892, type: 3}
       propertyPath: lazerLengthModifier
@@ -77433,7 +77503,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2636369515427183110, guid: 6f69a209764c1b4478169649365b0892, type: 3}
       propertyPath: layerMask.m_Bits
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2636369515427183110, guid: 6f69a209764c1b4478169649365b0892, type: 3}
       propertyPath: lazerLengthModifier
@@ -78080,7 +78150,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2636369515427183110, guid: 6f69a209764c1b4478169649365b0892, type: 3}
       propertyPath: layerMask.m_Bits
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2636369515427183110, guid: 6f69a209764c1b4478169649365b0892, type: 3}
       propertyPath: lazerLengthModifier
@@ -89527,7 +89597,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2636369515427183110, guid: 6f69a209764c1b4478169649365b0892, type: 3}
       propertyPath: layerMask.m_Bits
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2636369515427183110, guid: 6f69a209764c1b4478169649365b0892, type: 3}
       propertyPath: lazerLengthModifier
@@ -101787,7 +101857,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2636369515427183110, guid: 6f69a209764c1b4478169649365b0892, type: 3}
       propertyPath: layerMask.m_Bits
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2636369515427183110, guid: 6f69a209764c1b4478169649365b0892, type: 3}
       propertyPath: lazerLengthModifier
@@ -109278,7 +109348,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2636369515427183110, guid: 6f69a209764c1b4478169649365b0892, type: 3}
       propertyPath: layerMask.m_Bits
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2636369515427183110, guid: 6f69a209764c1b4478169649365b0892, type: 3}
       propertyPath: lazerLengthModifier
@@ -123689,3 +123759,4 @@ SceneRoots:
   - {fileID: 1348390036}
   - {fileID: 173461658}
   - {fileID: 1701397136}
+  - {fileID: 559979906}
