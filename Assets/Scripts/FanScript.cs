@@ -48,7 +48,6 @@ public class FanScript : MonoBehaviour
                 //forceExert = Mathf.Min(minimumForce, forceMagnitude / ClickDistanceFromBubbleCenter);
                 forceDirection.z = 0;
                 force = -forceDirection.normalized * forceExert;
-                Debug.Log("Force: " + force);
             }
         }
 

@@ -10,8 +10,15 @@ public class LeaderboardEntryUI : MonoBehaviour
     {
         playerNameText.text = leaderboardEntry.playerName;
 
-        scoreText.text = $"Score: {leaderboardEntry.score}";
+        scoreText.text = $"{leaderboardEntry.score}";
 
+        gameObject.SetActive(true);
+    }
+
+    public void SetupTitleEntry()
+    {
+        playerNameText.text = "Leaderboard";
+        scoreText.gameObject.SetActive(false);
         gameObject.SetActive(true);
     }
 }

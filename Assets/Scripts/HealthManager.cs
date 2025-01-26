@@ -11,9 +11,6 @@ public class HealthManager : MonoBehaviour
     [SerializeField] private SpriteRenderer rend;
     private TrailRenderer trailLine;
     private ParticleSystem trailParticle;
-    private Collider col;
-    private TrailRenderer trail;
-    private ParticleSystem part;
     [SerializeField] private SoundManager sound;
     private int soundBuffer = 1500;
 
@@ -46,11 +43,16 @@ public class HealthManager : MonoBehaviour
             Vector3 gravity = globalGravity * gravityScale * Vector3.up;
             rb.AddForce(gravity, ForceMode.Impulse);
         }
-        soundBuffer++;
-        if (!sound.audioSource.isPlaying && soundBuffer > 1500)
+
+        if (sound != null && sound.audioSource != null) 
         {
-            sound.PlayRandomSound("Music");
+            soundBuffer++;
+            if (!sound.audioSource.isPlaying && soundBuffer > 1500)
+            {
+                sound.PlayRandomSound("Music");
+            }
         }
+        
     }
 
     void OnTriggerEnter(Collider other)
@@ -116,8 +118,10 @@ public class HealthManager : MonoBehaviour
 
     public void Death()
     {
-        
-
+        if (rend != null)
+        {
+            rend.enabled = false;
+        }
         Debug.Log("Death() runs");
     }
 

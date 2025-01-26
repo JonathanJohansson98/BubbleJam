@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     private bool isGamePaused = false;
     private bool isGameOver = false;
 
-    private int currentScore = 0;
+    public float currentTime = 0;
 
     private void Awake()
     {
