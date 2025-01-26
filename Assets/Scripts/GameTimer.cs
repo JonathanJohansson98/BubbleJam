@@ -17,7 +17,9 @@ public class GameTimer : MonoBehaviour
         if (isTimerRunning)
         {
             elapsedTime += Time.deltaTime;
-            UpdateTimerDisplay(elapsedTime, false);
+            UpdateTimerDisplay(elapsedTime, true);
+
+            PlayerPrefs.SetFloat("Score", elapsedTime);
         }
     }
 

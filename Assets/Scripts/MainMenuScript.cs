@@ -12,9 +12,9 @@ public class MainMenuScript : MonoBehaviour
 
     private void Awake()
     {
-        startGame.onClick.AddListener(StartGame);
-        exitGame.onClick.AddListener(ExitGame);
-        //credits.onClick.AddListener(Credits);
+        startGame?.onClick.AddListener(StartGame);
+        exitGame?.onClick.AddListener(ExitGame);
+        //credits?.onClick.AddListener(Credits);
     }
 
     private void StartGame()
