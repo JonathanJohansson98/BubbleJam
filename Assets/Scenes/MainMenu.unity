@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1549.4, y: -661.84}
-  m_SizeDelta: {x: -1661.328, y: -1003.8375}
+  m_AnchoredPosition: {x: 1549.4, y: -634.98}
+  m_SizeDelta: {x: -1661.328, y: -1008.07996}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &87503798
 MonoBehaviour:
@@ -687,7 +687,6 @@ MonoBehaviour:
   startGame: {fileID: 1830042749}
   exitGame: {fileID: 1593114641}
   options: {fileID: 0}
-  credits: {fileID: 0}
 --- !u!1 &1034501984
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,7 +830,9 @@ MonoBehaviour:
 
     Oliver Karlsson
 
-    Simon Lindstrom'
+    Simon Lindstrom
+
+    Tor Henriksson'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0ee6d6bc1e4a6f84c81f3199cca6afca, type: 2}
   m_sharedMaterial: {fileID: -5645487269228080661, guid: 0ee6d6bc1e4a6f84c81f3199cca6afca, type: 2}
@@ -943,8 +944,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1480, y: -738}
-  m_SizeDelta: {x: -1522.557, y: -770.27}
+  m_AnchoredPosition: {x: 1480, y: -706.7987}
+  m_SizeDelta: {x: -1522.557, y: -739.0687}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1326371377
 MonoBehaviour:
