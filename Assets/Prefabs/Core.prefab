@@ -150,7 +150,7 @@ Transform:
   m_GameObject: {fileID: 3225719240475114417}
   serializedVersion: 2
   m_LocalRotation: {x: -6.3108872e-30, y: -6.3108872e-30, z: -0, w: 1}
-  m_LocalPosition: {x: -22.88, y: -2.5300002, z: -10}
+  m_LocalPosition: {x: -31.4282, y: -2.9982753, z: -11.045282}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -351,6 +351,7 @@ Transform:
   - {fileID: 7964205151229578703}
   - {fileID: 5661694354860422930}
   - {fileID: 8549717665959712941}
+  - {fileID: 7097847593840967732}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4588550702389579666
@@ -497,6 +498,79 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
+--- !u!1001 &891109329078994488
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6202378902729688143}
+    m_Modifications:
+    - target: {fileID: 6389710262724215569, guid: df863f59e4fe04648bdbbe9f14a1e4c3, type: 3}
+      propertyPath: m_Name
+      value: soundmanager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7988618217344648716, guid: df863f59e4fe04648bdbbe9f14a1e4c3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 265.4735
+      objectReference: {fileID: 0}
+    - target: {fileID: 7988618217344648716, guid: df863f59e4fe04648bdbbe9f14a1e4c3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 99.45401
+      objectReference: {fileID: 0}
+    - target: {fileID: 7988618217344648716, guid: df863f59e4fe04648bdbbe9f14a1e4c3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7988618217344648716, guid: df863f59e4fe04648bdbbe9f14a1e4c3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7988618217344648716, guid: df863f59e4fe04648bdbbe9f14a1e4c3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7988618217344648716, guid: df863f59e4fe04648bdbbe9f14a1e4c3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7988618217344648716, guid: df863f59e4fe04648bdbbe9f14a1e4c3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7988618217344648716, guid: df863f59e4fe04648bdbbe9f14a1e4c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7988618217344648716, guid: df863f59e4fe04648bdbbe9f14a1e4c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7988618217344648716, guid: df863f59e4fe04648bdbbe9f14a1e4c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: df863f59e4fe04648bdbbe9f14a1e4c3, type: 3}
+--- !u!114 &4699511973179951685 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5577107853281086589, guid: df863f59e4fe04648bdbbe9f14a1e4c3, type: 3}
+  m_PrefabInstance: {fileID: 891109329078994488}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef29c049ea6e6642a4300fde520f14f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &7097847593840967732 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7988618217344648716, guid: df863f59e4fe04648bdbbe9f14a1e4c3, type: 3}
+  m_PrefabInstance: {fileID: 891109329078994488}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1833993882011848652
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -751,7 +825,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   playerCharacter: {fileID: 4779227872469239803}
-  rend: {fileID: 8471841247640266466}
+  rend: {fileID: 0}
+  sound: {fileID: 4699511973179951685}
   bubblePopAnimator: {fileID: 1552823366606534677}
   fanScript: {fileID: 4908385753958416727}
   gravityScale: 1
