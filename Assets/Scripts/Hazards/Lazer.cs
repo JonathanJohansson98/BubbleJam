@@ -51,12 +51,12 @@ public class Lazer : MonoBehaviour
         evaluatedLength = laserLenthCurve.Evaluate(Time.time % laserLenthCurve.keys[laserLenthCurve.length - 1].time);
         lazerLength = evaluatedLength * lazerLengthModifier;
 
-        if (evaluatedLength < .8f)
+        if (evaluatedLength < .005f && evaluatedLength > .001f)
         {
             LazerChargeEvent.Invoke();
         }
 
-        if (evaluatedLength >= .8f) 
+        if (evaluatedLength >= .005f || evaluatedLength <= .001f) 
         { 
             LazerStopChargeEvent.Invoke();
         }
