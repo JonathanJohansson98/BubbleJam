@@ -79,6 +79,13 @@ public class HealthManager : MonoBehaviour
             HealthUpdate();
             Debug.Log("YOU DIED TO " + other.gameObject.name);
         }
+        else if (other.CompareTag("Progress"))
+        {
+            if (soundBuffer > 1500)
+            {
+                sound.PlayRandomSound("Motivational");
+            }
+        }
     }
 
     public void HealthUpdate()
