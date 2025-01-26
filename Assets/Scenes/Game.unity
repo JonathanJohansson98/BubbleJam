@@ -277,6 +277,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallexEffect: 0.5
+  cam: {fileID: 0}
+  paralaxMod: 0.1
 --- !u!1 &1165284
 GameObject:
   m_ObjectHideFlags: 0
@@ -9262,6 +9264,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallexEffect: 0.6
+  cam: {fileID: 0}
+  paralaxMod: 0.15
 --- !u!1 &142389611
 GameObject:
   m_ObjectHideFlags: 0
@@ -22170,6 +22174,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallexEffect: 0.3
+  cam: {fileID: 0}
+  paralaxMod: 0.2
 --- !u!1 &376342933
 GameObject:
   m_ObjectHideFlags: 0
@@ -34584,6 +34590,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallexEffect: 0.3
+  cam: {fileID: 0}
+  paralaxMod: 0.2
 --- !u!1 &611659322
 GameObject:
   m_ObjectHideFlags: 0
@@ -49140,7 +49148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b13ebf9c9341cc4498ae512b2d54f474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallexEffect: 0.7
+  parallexEffect: 0
+  cam: {fileID: 0}
+  paralaxMod: 0.2
 --- !u!1 &903586857
 GameObject:
   m_ObjectHideFlags: 0
@@ -52049,7 +52059,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b13ebf9c9341cc4498ae512b2d54f474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallexEffect: 0.7
+  parallexEffect: 0
+  cam: {fileID: 0}
+  paralaxMod: 0.2
 --- !u!1 &965158115
 GameObject:
   m_ObjectHideFlags: 0
@@ -76601,6 +76613,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallexEffect: 0.6
+  cam: {fileID: 0}
+  paralaxMod: 0.15
 --- !u!1 &1311956996
 GameObject:
   m_ObjectHideFlags: 0
@@ -77350,9 +77364,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 844708113}
     m_Modifications:
+    - target: {fileID: 665240309277160849, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
+      propertyPath: paralaxMod
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 707709236314490749, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
       propertyPath: cam
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 707709236314490749, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
+      propertyPath: paralaxMod
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 847196024136117140, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
+      propertyPath: paralaxMod
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1207179248622429044, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
       propertyPath: m_Name
@@ -77370,9 +77396,29 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8b2928d310ebdd04597bd0f3a8986be4, type: 2}
+    - target: {fileID: 2115319903375637061, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
+      propertyPath: paralaxMod
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2322272461469600412, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
+      propertyPath: paralaxMod
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2322272461469600412, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
+      propertyPath: parallexEffect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2491524562579666921, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
       propertyPath: cam
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2491524562579666921, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
+      propertyPath: paralaxMod
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2491524562579666921, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
+      propertyPath: parallexEffect
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2823991131049029743, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -77390,6 +77436,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3764815289275983391, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
+      propertyPath: paralaxMod
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 3869971922589295056, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -77398,10 +77448,30 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4164964364458303245, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
+      propertyPath: paralaxMod
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164964364458303245, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
+      propertyPath: parallexEffect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4392814210772871616, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
+      propertyPath: paralaxMod
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4392814210772871616, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
+      propertyPath: parallexEffect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4703283131890860040, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f6feb102038ce344192544ce091ea4a2, type: 2}
+    - target: {fileID: 4731928463807853757, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
+      propertyPath: paralaxMod
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5026331037611598391, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -77414,9 +77484,17 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5276806869264123020, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
+      propertyPath: paralaxMod
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 5398309820325931553, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
       propertyPath: cam
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5398309820325931553, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
+      propertyPath: paralaxMod
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 5436662271467320055, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -77426,13 +77504,29 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5513592388377135908, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
+      propertyPath: paralaxMod
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589446125859455783, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
+      propertyPath: paralaxMod
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 5759041619592210957, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5759041619592210957, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
+      propertyPath: paralaxMod
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5928329130397521024, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
       propertyPath: cam
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5928329130397521024, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
+      propertyPath: paralaxMod
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6683268704676584149, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -77442,6 +77536,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6723062631136724632, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
+      propertyPath: paralaxMod
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 6839780171403661301, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -77450,6 +77548,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a0ea9902332809c40a0900d19dffbd8c, type: 2}
+    - target: {fileID: 7782244493249471715, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
+      propertyPath: paralaxMod
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7966975043671457932, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
+      propertyPath: paralaxMod
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 8001906975473534421, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.37
@@ -77498,6 +77604,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a0ea9902332809c40a0900d19dffbd8c, type: 2}
+    - target: {fileID: 9204132645718224606, guid: 369791e374daa7648992f4cd3aeed93f, type: 3}
+      propertyPath: paralaxMod
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -93780,6 +93890,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallexEffect: 0.5
+  cam: {fileID: 0}
+  paralaxMod: 0.1
 --- !u!1 &1606466104
 GameObject:
   m_ObjectHideFlags: 0
@@ -116234,6 +116346,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallexEffect: 0.4
+  cam: {fileID: 0}
+  paralaxMod: 0.05
 --- !u!1 &1981905962
 GameObject:
   m_ObjectHideFlags: 0
@@ -122719,6 +122833,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallexEffect: 0.4
+  cam: {fileID: 0}
+  paralaxMod: 0.05
 --- !u!1 &2121261947
 GameObject:
   m_ObjectHideFlags: 0
