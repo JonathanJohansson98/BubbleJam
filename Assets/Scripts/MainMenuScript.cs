@@ -7,14 +7,14 @@ public class MainMenuScript : MonoBehaviour
     [SerializeField] private Button startGame;
     [SerializeField] private Button exitGame;
     [SerializeField] private Button options;
-    [SerializeField] private Button credits;
+    //[SerializeField] private Button credits;
 
 
     private void Awake()
     {
         startGame.onClick.AddListener(StartGame);
         exitGame.onClick.AddListener(ExitGame);
-        credits.onClick.AddListener(Credits);
+        //credits.onClick.AddListener(Credits);
     }
 
     private void StartGame()
