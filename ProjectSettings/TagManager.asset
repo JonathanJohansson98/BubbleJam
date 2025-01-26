@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Checkpoint
   - Hazard
+  - Progress
   layers:
   - Default
   - TransparentFX
