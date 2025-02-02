@@ -35,6 +35,7 @@ public class HealthManager : MonoBehaviour
         currentHealth = maxHealth;
         trailLine = GetComponentInChildren<TrailRenderer>();
         trailParticle = GetComponentInChildren<ParticleSystem>();
+        Cursor.visible = false;
     }
     void FixedUpdate()
     {
@@ -71,6 +72,7 @@ public class HealthManager : MonoBehaviour
                 {
                     Debug.Log("Player has respawned at checkpoint: " + checkpoint.thisSafeZone);
                     latestCheckpoint = checkpoint.thisSafeZone;
+                    Cursor.visible = false;
                     restoreControl();
                 }
             }
@@ -127,6 +129,7 @@ public class HealthManager : MonoBehaviour
             rend.enabled = false;
         }
 
+        Cursor.visible = true;
         bubblePopAnimator.SetTrigger("Pop");
     }
 

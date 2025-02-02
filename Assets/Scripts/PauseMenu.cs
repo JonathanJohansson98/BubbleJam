@@ -11,10 +11,12 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private CanvasGroup pauseMenu;
 
     [SerializeField] private Button resumeButton;
+    [SerializeField] private Button restartButton;
     [SerializeField] private Button exitButton;
 
     public void Open()
     {
+        Cursor.visible = true;
         gameObject.SetActive(true);
 
         pauseMenu.alpha = 1;
@@ -27,10 +29,18 @@ public class PauseMenu : MonoBehaviour
         GameManager.instance.ResumeGame();
         resumeButton.onClick.RemoveListener(Resume);
         Destroy(gameObject);
+        Cursor.visible = false;
     }
 
     public void Exit()
     {
         Application.Quit();
+    }
+
+    public void Restart()
+    {
+        Resume();
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name);
     }
 }

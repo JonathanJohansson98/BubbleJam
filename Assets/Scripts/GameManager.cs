@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     {
         if (!isGamePaused && Input.GetKeyDown(KeyCode.Escape))
         {
+            Cursor.visible = true;
             PauseGame();
         }
     }
@@ -47,6 +48,7 @@ public class GameManager : MonoBehaviour
         if(!isGamePaused)
             Instantiate<PauseMenu>(pauseOverlay, Vector3.zero, Quaternion.identity).Open();
 
+        Cursor.visible = true;
         isGamePaused = true;
         Time.timeScale = 0f;
     }
