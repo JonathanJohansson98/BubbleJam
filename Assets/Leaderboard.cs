@@ -19,7 +19,7 @@ public class Leaderboard : MonoBehaviour
 
     private void Awake()
     {
-        playerScore.text = "Your Time:" + PlayerPrefs.GetFloat("Score");
+        playerScore.text = "Your Time: " + PlayerPrefs.GetFloat("Score");
     }
 
     [ContextMenu("Get")]
