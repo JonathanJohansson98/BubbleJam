@@ -48,15 +48,26 @@ MonoBehaviour:
   soundCategories:
   - categoryName: Motivational
     audioClips:
-    - {fileID: 8300000, guid: 5bee201c97be7b94a9be623625c576ff, type: 3}
+    - {fileID: 8300000, guid: fd13080bf5de97a4dbf54da639efc1c8, type: 3}
+    - {fileID: 8300000, guid: b3024b22b68ace643a94e53edd20fb45, type: 3}
+    - {fileID: 8300000, guid: 93d32dc495d3c9f4884133b8581e72b2, type: 3}
   - categoryName: Demotivational
     audioClips:
-    - {fileID: 8300000, guid: b4480bde8818c5f4c907906aeb4e18f7, type: 3}
-    - {fileID: 8300000, guid: 60616b7ca95c7e843b6379381149f27a, type: 3}
-    - {fileID: 8300000, guid: 1caa21ab4943e0848af3a083daa8c654, type: 3}
-    - {fileID: 8300000, guid: 5a2f00b05bc1a8a4daa1c5c48a7e8502, type: 3}
-    - {fileID: 8300000, guid: f1e30530e4bcbc2499002e6c5bda11ea, type: 3}
-    - {fileID: 8300000, guid: 332b994252e92cc42a07e2f22d905cb9, type: 3}
+    - {fileID: 8300000, guid: f0acacc3468601e4d913bcf647b77821, type: 3}
+    - {fileID: 8300000, guid: cf52e8e7501788d4f8405b9feef1a2ae, type: 3}
+    - {fileID: 8300000, guid: 357f30e75a7e3de4e9e0aeca74de2db6, type: 3}
+    - {fileID: 8300000, guid: 7253636e1aba41f4cb618654abf65e8a, type: 3}
+    - {fileID: 8300000, guid: 2e1f6922fa9765c4eaaaaf677e51af36, type: 3}
+    - {fileID: 8300000, guid: 1516e3316a8519349aa4380bcf5ac3fc, type: 3}
+    - {fileID: 8300000, guid: a67c9791c881d3645b9ce5c7c641d2fa, type: 3}
+    - {fileID: 8300000, guid: ada0391d1b2c3f542bc2997b602d7e65, type: 3}
+    - {fileID: 8300000, guid: c3054ef30ccd92b449f0b169f3acf536, type: 3}
+    - {fileID: 8300000, guid: 010911398df7b4f4280edee69de8f176, type: 3}
+    - {fileID: 8300000, guid: ba514dc46b31a374e975c0eb6b1f25ca, type: 3}
+    - {fileID: 8300000, guid: 88c49734a7d49f44cacdce24d73dbf43, type: 3}
+    - {fileID: 8300000, guid: 73a6bd228b65c0c40b2cd8ff55965bcd, type: 3}
+    - {fileID: 8300000, guid: cff2c733a89d91141a6cf642b65e4d56, type: 3}
+    - {fileID: 8300000, guid: f46d3e08e36ee8445b229cb885e0af88, type: 3}
   - categoryName: Music
     audioClips:
     - {fileID: 8300000, guid: c9674931e82869f4bbe970630c2ab716, type: 3}
@@ -69,9 +80,8 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 72a8febec588bd94aa292336e04e4758, type: 3}
   - categoryName: Death
     audioClips:
-    - {fileID: 8300000, guid: 9d53249ce588cd044a3c1ab028f740cb, type: 3}
-    - {fileID: 8300000, guid: 2683002488606d948aa0685cf2e56890, type: 3}
-    - {fileID: 8300000, guid: 4eb4fdb6de511cb469e17b8b29dd66b2, type: 3}
+    - {fileID: 8300000, guid: 9af9338967275ae4b87c9f619ad2b69d, type: 3}
+    - {fileID: 8300000, guid: 9f50145f480ac0d4ea3fe78ff5a045de, type: 3}
   audioSource: {fileID: 3506744841536405349}
 --- !u!82 &3506744841536405349
 AudioSource:
@@ -82,7 +92,7 @@ AudioSource:
   m_GameObject: {fileID: 6389710262724215569}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 649c068e276bd5a40b64a776da9b80e2, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
